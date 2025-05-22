@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyv8"
+version = "1.0.0"
+description = "Python bindings for the V8 JavaScript engine"
+readme = "README.md"
+authors = [
+    {name = "conlin", email = "995018884@qq.com"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.10, <4"
+keywords = ["v8", "javascript", "python", "spider"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: C++",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/ConlinH/pyv8"
+Repository = "https://github.com/ConlinH/pyv8.git"
+Issues = "https://github.com/ConlinH/pyv8/issues"
+
+[tool.setuptools]
+packages = ["pyv8"]
+
+[tool.setuptools.package-data]
+pyv8 = ["icudtl.dat", "_pyv8.pyd", "_pyv8.abi3.so"]
+
+# 注意：扩展模块配置在setup.py中定义
+
+[tool.pytest]
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
