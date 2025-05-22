@@ -21,6 +21,13 @@ pyv8主要是为了js逆向时补环境提供更多底层支持，为一比一�
 - Python 3.10 或更高版本
 - 支持的平台：Windows, Linux
 
+
+### 通过pip安装
+
+```bash
+pip install git+https://github.com/ConlinH/pyv8
+```
+
 ### 从源码构建
 
 1. 克隆仓库：
@@ -40,7 +47,12 @@ pip install -e .
 pip install .
 ```
 
-3.卸载：
+3. 检测是否安装成功
+```bash
+python -c "from pyv8 import _pyv8; print(_pyv8.v8_version())"
+```
+
+4.卸载：
 
 ```bash
 pip uninstall pyv8
